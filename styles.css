@@ -1,0 +1,203 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: hsl(229, 57%, 11%);
+  background-image: url("images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+  font-family: "Raleway";
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.logo-card {
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 15px 90px 15px 15px;
+    padding: 40px 100px 40px 40px;
+    margin: 0 30px 0 0;
+}
+
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(2, 50px);
+  grid-gap: 20px;
+}
+
+.logo {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.icon {
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storage-card {
+  position: relative;
+  background-color: hsl(228, 56%, 26%);
+  color: hsl(243, 100%, 93%);
+  padding: 40px;
+  border-radius: 15px;
+  width: 35%;
+}
+
+.storage-grid {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+}
+
+.caption {
+  grid-column: 1 / -1;
+}
+
+.start {
+  grid-column: 1 / 2;
+}
+
+.end {
+  text-align: right;
+  grid-column: 2 / 3;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.meter {
+  grid-column: 1 / -1;
+  height: 20px;
+  background: hsl(229, 57%, 11%);
+  width: 100%;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.meter > span {
+  height: 100%;
+  width: 81.5%;
+  border-radius: 16px;
+  background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  display: flex;
+  align-items: center;
+  position: relative;
+  animation-name: leftToRight;
+  animation-duration: 2s;
+}
+
+@keyframes leftToRight {
+  from {width: 20px;}
+  to {width: 81.5%}
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  background: white;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: 3px;
+}
+
+.speech-bubble {
+	position: absolute;
+  right: 0;
+  top: -100px;
+  display: inline-block;
+	background: white;
+	border-radius: 15px 15px 0 15px;
+  color:  hsl(229, 7%, 55%);
+  margin: 40px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big {
+  color: hsl(229, 57%, 11%);
+  font-size: 40px;
+  margin-right: 5px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: white;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background-image: url("images/bg-mobile.png");
+    background-size: cover;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0 15%;
+  }
+
+  .logo-card {
+    margin: 0 0 30px 0;
+    padding: 50px;
+    width: 100%;
+  }
+
+  .storage-card {
+    padding: 50px;
+    padding-bottom: 75px;
+    width: 100%;
+  }
+
+  .storage-grid {
+    grid-gap: 15px;
+  }
+
+  .speech-bubble {
+      width: 50%;
+      border-radius: 15px;
+      bottom: -45px;
+      top: 160px;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+
+  .speech-bubble:after {
+    visibility: hidden;
+  }
+
+}
